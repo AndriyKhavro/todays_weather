@@ -31,7 +31,7 @@ end
 set port: 8002
 
 before do
-  initializeWeather if Weather.count == 0;
+  initializeWeather if Weather.where(day: Date.today).count == 0;
 end
 
 get '/todays_weather.json' do
